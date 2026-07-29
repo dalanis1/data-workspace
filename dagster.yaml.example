@@ -1,0 +1,11 @@
+storage:
+  postgres:
+    postgres_db:
+      hostname:
+        env: DW_HOST
+      port: 5432
+      username:
+        env: DW_USER
+      password:
+        env: DW_PASSWORD
+      db_name: dagster

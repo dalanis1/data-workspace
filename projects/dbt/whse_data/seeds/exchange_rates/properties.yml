@@ -1,0 +1,20 @@
+version: 2
+
+seeds:
+  - name: seed_banxico_source
+    config:
+      schema: exchange_rates
+      alias: banxico_source
+      column_types:
+        kurst: varchar(4)
+        fcurr: varchar(5)
+        tcurr: varchar(5)
+        gdatu: date
+        ukurs: numeric(18, 6)
+        ffact: integer
+        tfact: integer
+        serie: text
+        fetched_at: timestamptz
+      post_hook:
+        - "ALTER TABLE {{this}} DROP CONSTRAINT IF EXISTS banxico_source_pk"
+        - "ALTER TABLE {{this}} ADD CONSTRAINT banxico_source_pk PRIMARY KEY (kurst, fcurr, tcurr, gdatu)"

@@ -1,0 +1,33 @@
+[project]
+name = "http_requests"
+requires-python = ">=3.10,<3.15"
+version = "0.1.0"
+dependencies = [
+    "dagster==1.13.15",
+    "utils",
+]
+
+[dependency-groups]
+dev = [
+    "dagster-dg-cli",
+    "dagster-webserver"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+force-include = { "pyproject.toml" = "pyproject.toml" }
+
+[tool.dg]
+directory_type = "project"
+
+[tool.dg.project]
+root_module = "http_requests"
+registry_modules = [
+    "http_requests.components.*",
+]
+
+[tool.uv.sources]
+utils = { path = "../../utils", editable = true }
