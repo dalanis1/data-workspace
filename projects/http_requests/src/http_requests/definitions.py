@@ -10,7 +10,7 @@ def defs():
         resources = {
             "whse_resource": WarehouseResource(),
             "banxico_resource": BanxicoAPIResource(
-                token = dg.EnvVar("BANXICO_API_KEY").get_value()
+                token = dg.EnvVar("BANXICO_API_KEY").get_value("")
             )
         }
     )

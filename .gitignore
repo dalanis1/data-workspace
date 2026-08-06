@@ -4,6 +4,19 @@ storage/
 *.duckdb
 *.db
 dagster.yaml
+.dagster/
+dagster_home/
+history/
+
+# Dagster-webserver & daemon process artifacts
+.dagster_runs/
+.dagster-daemon/
+*.tmp
+*.lock
+
+# Nux configuration & environments
+.nux/
+nux.yaml
 
 # Python cache & build
 __pycache__/
@@ -29,6 +42,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+.logs_queue/
 
 # Virtual environments
 .env
@@ -56,3 +70,4 @@ venv.bak/
 .Trashes
 ehthumbs.db
 Thumbs.db
+.telemetry
