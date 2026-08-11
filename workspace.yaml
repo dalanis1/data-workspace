@@ -1,5 +1,3 @@
 load_from:
-  - grpc_server:
-      host: localhost
-      port: 4266
-      location_name: 'http_requests'
+  - python_module:
+    module_name: http_requests.definitions
